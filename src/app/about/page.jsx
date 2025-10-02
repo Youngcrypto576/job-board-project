@@ -1,14 +1,14 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-
+import Link from "next/link";
 export default function AboutPage() {
   return (
     <main className="flex flex-col">
       {/* Hero Section with Background */}
       <section className="relative w-full h-[60vh] flex items-center justify-center">
         <Image
-          src="/about.png" // ✅ using your file in /public/about.png
+          src="/about.png" // ✅ 
           alt="About JobHive background"
           fill
           className="object-cover"
@@ -20,8 +20,9 @@ export default function AboutPage() {
             About <span className="text-white">JobHive:</span>
           </h1>
           <p className="max-w-2xl mx-auto text-lg">
-            JobHive: is your trusted platform for discovering exciting career opportunities in Technology, Finance, Marketing, Health, and Education. Our mission is simple: to connect job seekers with the roles that matter most and make the job hunt less stressful, more transparent, and more rewarding.
+            JobHive: is your trusted platform for discovering exciting career opportunities in Technology, Finance, Marketing, Design, and Education. Our mission is simple: to connect job seekers with the roles that matter most and make the job hunt less stressful, more transparent, and more rewarding.
           </p>
+
         </div>
       </section>
 

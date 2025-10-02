@@ -12,7 +12,7 @@ const categories = [
   { id: 1, name: "Technology", icon: "💻" },
   { id: 2, name: "Finance", icon: "💰" },
   { id: 3, name: "Marketing", icon: "📢" },
-  { id: 4, name: "Health", icon: "⚕️" },
+  { id: 4, name: "Design", icon: "🖼️" },
   { id: 5, name: "Education", icon: "📚" },
 ];
 

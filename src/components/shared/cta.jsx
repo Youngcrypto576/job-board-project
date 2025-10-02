@@ -14,15 +14,19 @@ export default function CTA() {
       <h2 className="text-4xl font-extrabold mb-4">
         Ready to find your next job?
       </h2>
+
       <p className="text-lg mb-6">
-        Explore opportunities in technology, finance, marketing, health, and
-        education today.
+        Unlock career possibilities across dynamic sectors like technology,
+        finance, marketing, design, and education. Explore today&apos;s
+        opportunities tailored to drive growth and fulfillment in your
+        professional journey.
       </p>
+
       <Link
         href="/jobs"
         className="inline-block px-8 py-4 bg-white text-indigo-700 font-semibold rounded-lg shadow hover:bg-gray-100 transition"
       >
-        Browse Jobs
+        Explore Jobs
       </Link>
     </motion.section>
   );

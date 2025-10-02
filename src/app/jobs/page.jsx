@@ -18,7 +18,7 @@ export default function JobsPage() {
 
   return (
     <div className="max-w-6xl mx-auto p-6">
-      <h1 className="text-4xl font-bold mb-6 text-center">Browse Jobs</h1>
+      <h1 className="text-4xl font-bold mb-6 text-center">Explore Jobs</h1>
 
       {/* Category Filter */}
       <div className="flex flex-wrap gap-3 justify-center mb-8">
