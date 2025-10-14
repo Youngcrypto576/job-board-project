@@ -79,11 +79,16 @@ export default function ContactPage() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <p className="mb-2">
-          📧 Email us at:{" "}
-          <span className="font-semibold">support@jobhive.com</span>
-        </p>
-        <p>📍 Lagos, Nigeria</p>
+       <p className="mb-2">
+  📧 Email us at:{" "}
+  <a
+    href="mailto:support@jobhive.com"
+    className="font-semibold text-blue-600 hover:underline"
+  >
+    support@jobhive.com
+  </a>
+</p>
+<p>📍 Lagos, Nigeria</p>
       </motion.section>
     </div>
   );

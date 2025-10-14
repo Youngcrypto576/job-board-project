@@ -13,32 +13,21 @@ export default function AboutLayout({ children }) {
 
   return (
     <div className="p-6">
-      {/* Sub-navbar */}
-      <nav className="relative flex items-center border-b pb-3 mb-6">
-        {/* Left: About Us */}
-        <div className="flex-1">
-          <Link href="/about" className={linkClass("/about")}>
-            About Us
-          </Link>
-        </div>
+  {/* Sub-navbar */}
+  <nav className="flex justify-center space-x-8 border-b pb-3 mb-6">
+    <Link href="/about" className={linkClass("/about")}>
+      About Us
+    </Link>
+    <Link href="/about/faq" className={linkClass("/about/faq")}>
+      FAQ
+    </Link>
+    <Link href="/about/safety" className={linkClass("/about/safety")}>
+      Safety
+    </Link>
+  </nav>
 
-        {/* Center: FAQ */}
-        <div className="absolute left-1/2 transform -translate-x-1/2">
-          <Link href="/about/faq" className={linkClass("/about/faq")}>
-            FAQ
-          </Link>
-        </div>
-
-        {/* Right: Safety */}
-        <div className="flex-1 text-right">
-          <Link href="/about/safety" className={linkClass("/about/safety")}>
-            Safety
-          </Link>
-        </div>
-      </nav>
-
-      {/* Page content (About, FAQ, or Safety) */}
-      <main>{children}</main>
-    </div>
+  {/* Page content (About, FAQ, or Safety) */}
+  <main>{children}</main>
+</div>
   );
 }

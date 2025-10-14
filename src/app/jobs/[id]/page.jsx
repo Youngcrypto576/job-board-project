@@ -23,6 +23,58 @@ export default function JobDetailsPage() {
         {job.location} • {job.type}
       </p>
       <p className="text-gray-700 leading-relaxed mb-6">{job.description}</p>
+      {/* Additional Job Details */}
+{job.salary && (
+  <p className="text-gray-700 mb-2">
+    <strong>💰 Salary:</strong> {job.salary}
+  </p>
+)}
+
+{job.responsibilities && (
+  <div className="mb-4">
+    <h3 className="font-semibold text-lg mb-2">🧩 Responsibilities:</h3>
+    <ul className="list-disc pl-6 text-gray-700 space-y-1">
+      {job.responsibilities.map((task, i) => (
+        <li key={i}>{task}</li>
+      ))}
+    </ul>
+  </div>
+)}
+
+{job.qualifications && (
+  <div className="mb-4">
+    <h3 className="font-semibold text-lg mb-2">🎓 Required Qualifications:</h3>
+    <ul className="list-disc pl-6 text-gray-700 space-y-1">
+      {job.qualifications.map((qual, i) => (
+        <li key={i}>{qual}</li>
+      ))}
+    </ul>
+  </div>
+)}
+
+{job.benefits && (
+  <div className="mb-4">
+    <h3 className="font-semibold text-lg mb-2">🎁 Benefits:</h3>
+    <ul className="list-disc pl-6 text-gray-700 space-y-1">
+      {job.benefits.map((benefit, i) => (
+        <li key={i}>{benefit}</li>
+      ))}
+    </ul>
+  </div>
+)}
+
+{job.reportingTo && (
+  <p className="text-gray-700 mb-2">
+    <strong>📋 Reports To:</strong> {job.reportingTo}
+  </p>
+)}
+
+{job.companyInfo && (
+  <p className="text-gray-700 mb-6">
+    <strong>🏢 About the Company:</strong> {job.companyInfo}
+  </p>
+)}
+
 
       {/* Apply Form */}
       <h2 className="text-2xl font-semibold mb-4">Apply Now</h2>
