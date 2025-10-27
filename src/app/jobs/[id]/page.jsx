@@ -1,5 +1,6 @@
 "use client";
 import { useParams } from "next/navigation";
+import { MapPin, Building2, Briefcase, Wallet, ListChecks, GraduationCap, Gift, ClipboardList, Info } from "lucide-react";
 import jobs from "@/lib/jobsdata";
 
 export default function JobDetailsPage() {
@@ -16,64 +17,74 @@ export default function JobDetailsPage() {
 
   return (
     <div className="max-w-3xl mx-auto p-10 bg-white shadow rounded-lg mt-10">
-      {/* Job Info */}
-      <h1 className="text-3xl font-bold mb-4">{job.title}</h1>
-      <p className="text-gray-600 mb-2">{job.company}</p>
-      <p className="text-gray-500 mb-6">
-        {job.location} • {job.type}
-      </p>
-      <p className="text-gray-700 leading-relaxed mb-6">{job.description}</p>
-      {/* Additional Job Details */}
-{job.salary && (
-  <p className="text-gray-700 mb-2">
-    <strong>💰 Salary:</strong> {job.salary}
+  <h1 className="text-3xl font-bold mb-4 flex items-center gap-2">
+    <Briefcase className="w-6 h-6 text-indigo-600" /> {job.title}
+  </h1>
+  <p className="text-gray-600 mb-2 flex items-center gap-2">
+    <Building2 className="w-5 h-5 text-gray-500" /> {job.company}
   </p>
-)}
-
-{job.responsibilities && (
-  <div className="mb-4">
-    <h3 className="font-semibold text-lg mb-2">🧩 Responsibilities:</h3>
-    <ul className="list-disc pl-6 text-gray-700 space-y-1">
-      {job.responsibilities.map((task, i) => (
-        <li key={i}>{task}</li>
-      ))}
-    </ul>
-  </div>
-)}
-
-{job.qualifications && (
-  <div className="mb-4">
-    <h3 className="font-semibold text-lg mb-2">🎓 Required Qualifications:</h3>
-    <ul className="list-disc pl-6 text-gray-700 space-y-1">
-      {job.qualifications.map((qual, i) => (
-        <li key={i}>{qual}</li>
-      ))}
-    </ul>
-  </div>
-)}
-
-{job.benefits && (
-  <div className="mb-4">
-    <h3 className="font-semibold text-lg mb-2">🎁 Benefits:</h3>
-    <ul className="list-disc pl-6 text-gray-700 space-y-1">
-      {job.benefits.map((benefit, i) => (
-        <li key={i}>{benefit}</li>
-      ))}
-    </ul>
-  </div>
-)}
-
-{job.reportingTo && (
-  <p className="text-gray-700 mb-2">
-    <strong>📋 Reports To:</strong> {job.reportingTo}
+  <p className="text-gray-500 mb-6 flex items-center gap-2">
+    <MapPin className="w-5 h-5 text-gray-500" /> {job.location} • {job.type}
   </p>
-)}
+  <p className="text-gray-700 leading-relaxed mb-6">{job.description}</p>
 
-{job.companyInfo && (
-  <p className="text-gray-700 mb-6">
-    <strong>🏢 About the Company:</strong> {job.companyInfo}
-  </p>
-)}
+  {job.salary && (
+    <p className="text-gray-700 mb-2 flex items-center gap-2">
+      <Wallet className="w-5 h-5 text-indigo-600" />
+      <strong>Salary:</strong> {job.salary}
+    </p>
+  )}
+
+  {job.responsibilities && (
+    <div className="mb-4">
+      <h3 className="font-semibold text-lg mb-2 flex items-center gap-2">
+        <ListChecks className="w-5 h-5 text-indigo-600" /> Responsibilities
+      </h3>
+      <ul className="list-disc pl-6 text-gray-700 space-y-1">
+        {job.responsibilities.map((task, i) => (
+          <li key={i}>{task}</li>
+        ))}
+      </ul>
+    </div>
+  )}
+
+  {job.qualifications && (
+    <div className="mb-4">
+      <h3 className="font-semibold text-lg mb-2 flex items-center gap-2">
+        <GraduationCap className="w-5 h-5 text-indigo-600" /> Required Qualifications
+      </h3>
+      <ul className="list-disc pl-6 text-gray-700 space-y-1">
+        {job.qualifications.map((qual, i) => (
+          <li key={i}>{qual}</li>
+        ))}
+      </ul>
+    </div>
+  )}
+
+  {job.benefits && (
+    <div className="mb-4">
+      <h3 className="font-semibold text-lg mb-2 flex items-center gap-2">
+        <Gift className="w-5 h-5 text-indigo-600" /> Benefits
+      </h3>
+      <ul className="list-disc pl-6 text-gray-700 space-y-1">
+        {job.benefits.map((benefit, i) => (
+          <li key={i}>{benefit}</li>
+        ))}
+      </ul>
+    </div>
+  )}
+
+  {job.reportingTo && (
+    <p className="text-gray-700 mb-2 flex items-center gap-2">
+      <ClipboardList className="w-5 h-5 text-indigo-600" /> Reports To: {job.reportingTo}
+    </p>
+  )}
+
+  {job.companyInfo && (
+    <p className="text-gray-700 mb-6 flex items-start gap-2">
+      <Info className="w-5 h-5 text-indigo-600 mt-1" /> <strong>About the Company:</strong> {job.companyInfo}
+    </p>
+  )}
 
 
       {/* Apply Form */}

@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-
+import { Mail, MapPin } from "lucide-react";
 
 export default function ContactPage() {
   return (
@@ -30,9 +30,7 @@ export default function ContactPage() {
       >
         <form className="space-y-6">
           <div>
-            <label className="block text-gray-700 font-medium mb-2">
-              Name
-            </label>
+            <label className="block text-gray-700 font-medium mb-2">Name</label>
             <input
               type="text"
               placeholder="Your full name"
@@ -41,9 +39,7 @@ export default function ContactPage() {
           </div>
 
           <div>
-            <label className="block text-gray-700 font-medium mb-2">
-              Email
-            </label>
+            <label className="block text-gray-700 font-medium mb-2">Email</label>
             <input
               type="email"
               placeholder="you@example.com"
@@ -52,9 +48,7 @@ export default function ContactPage() {
           </div>
 
           <div>
-            <label className="block text-gray-700 font-medium mb-2">
-              Message
-            </label>
+            <label className="block text-gray-700 font-medium mb-2">Message</label>
             <textarea
               rows="5"
               placeholder="Write your message..."
@@ -73,24 +67,27 @@ export default function ContactPage() {
 
       {/* Extra Contact Info */}
       <motion.section
-        className="text-center py-12 text-gray-700"
+        className="text-center py-12 text-gray-700 space-y-3"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-       <p className="mb-2">
-  📧 Email us at:{" "}
-  <a
-    href="mailto:support@jobhive.com"
-    className="font-semibold text-blue-600 hover:underline"
-  >
-    support@jobhive.com
-  </a>
-</p>
-<p>📍 Lagos, Nigeria</p>
+        <p className="flex items-center justify-center gap-2">
+          <Mail className="w-5 h-5 text-indigo-600" />
+          <a
+            href="mailto:support@jobhive.com"
+            className="font-semibold text-blue-600 hover:underline"
+          >
+            support@jobhive.com
+          </a>
+        </p>
+
+        <p className="flex items-center justify-center gap-2">
+          <MapPin className="w-5 h-5 text-indigo-600" />
+          Lagos, Nigeria
+        </p>
       </motion.section>
     </div>
   );
 }
-``

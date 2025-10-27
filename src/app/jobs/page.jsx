@@ -1,16 +1,14 @@
-
 "use client";
 import { useState } from "react";
 import Link from "next/link";
 import jobs from "@/lib/jobsdata";
+import { MapPin, Building2, Briefcase } from "lucide-react";
 
 export default function JobsPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  // Get unique categories from jobsData
   const categories = ["All", ...new Set(jobs.map((job) => job.category))];
 
-  // Filter jobs by category
   const filteredJobs =
     selectedCategory === "All"
       ? jobs
@@ -18,7 +16,9 @@ export default function JobsPage() {
 
   return (
     <div className="max-w-6xl mx-auto p-6">
-      <h1 className="text-4xl font-bold mb-6 text-center">Explore Jobs</h1>
+      <h1 className="text-4xl font-bold mb-6 text-center flex items-center justify-center gap-2">
+        <Briefcase className="w-7 h-7 text-indigo-600" /> Explore Jobs
+      </h1>
 
       {/* Category Filter */}
       <div className="flex flex-wrap gap-3 justify-center mb-8">
@@ -26,7 +26,7 @@ export default function JobsPage() {
           <button
             key={cat}
             onClick={() => setSelectedCategory(cat)}
-            className={`px-4 py-2 rounded-lg border ${
+            className={`px-4 py-2 rounded-lg border transition ${
               selectedCategory === cat
                 ? "bg-indigo-600 text-white border-indigo-600"
                 : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
@@ -44,12 +44,20 @@ export default function JobsPage() {
             key={job.id}
             className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition"
           >
-            <h2 className="text-2xl font-semibold mb-2">{job.title}</h2>
-            <p className="text-gray-600 mb-1">{job.company}</p>
-            <p className="text-gray-500 mb-3">
-              {job.location} • {job.type}
+            <h2 className="text-2xl font-semibold mb-2 flex items-center gap-2">
+              <Briefcase className="w-5 h-5 text-indigo-600" /> {job.title}
+            </h2>
+
+            <p className="text-gray-600 mb-1 flex items-center gap-2">
+              <Building2 className="w-4 h-4 text-gray-500" /> {job.company}
             </p>
+
+            <p className="text-gray-500 mb-3 flex items-center gap-2">
+              <MapPin className="w-4 h-4 text-gray-500" /> {job.location} • {job.type}
+            </p>
+
             <p className="text-gray-700 mb-4">{job.summary}</p>
+
             <Link
               href={`/jobs/${job.id}`}
               className="inline-block px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 transition"

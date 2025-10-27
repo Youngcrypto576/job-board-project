@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { Menu, X } from "lucide-react"; // outline icons for open/close
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,9 +26,10 @@ export default function Navbar() {
         {/* Mobile Hamburger */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-2xl focus:outline-none"
+          className="md:hidden text-gray-800 focus:outline-none"
+          aria-label="Toggle menu"
         >
-          ☰
+          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
